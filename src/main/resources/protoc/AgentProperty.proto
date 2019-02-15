@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package protocol;
+
+option java_package = "protocol";
+option java_outer_classname = "AgentProperty";
+
+// Agent property
+enum AgentPropertyEnum {
+	NATIVE_TO_SIMULATION = 0;
+	INHERITED_FROM_ANOTHER_SIMULATOR = 1;
+}

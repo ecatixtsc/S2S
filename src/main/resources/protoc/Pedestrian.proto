@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package protocol;
+
+//import external protocol classes
+import "Coordinates3D.proto";
+import "AgentProperty.proto";
+
+// java settings
+option java_package = "protocol";
+option java_outer_classname = "Pedestrian";
+
+// Pedestrian information class
+message PedestrianInformation {
+
+// publisher id
+	string publisherId = 2;
+
+	//simulation timestamp
+	int64 simTimeStamp = 7;
+
+	// vehicle state
+	protocol.AgentPropertyEnum pedestrianState = 1;
+
+	// internal vehicle id
+	string internalPedestrianId = 3;
+
+	// coordinates
+	protocol.Coordinates3DMessage pedestrianCoordinates = 4;
+
+	// heading
+	protocol.Coordinates3DMessage pedestrianHeading = 5;
+
+	//speed
+	double pedestrainSpeed = 6;
+}

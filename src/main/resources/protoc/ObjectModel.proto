@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+//import "google/protobuf/any.proto";
+package protocol;
+
+// java configurations
+option java_package = "protocol";
+option java_outer_classname = "ObjectModel";
+
+//import the agent models
+import "Pedestrian.proto";
+import "Vehicle.proto";
+import "Handshake.proto";
+
+//message definition
+message ObjectModelPacket {
+
+//socket timestamp
+	int64 socketTimestamp = 4;
+
+	//packet information
+	oneof packet {
+		VehicleInformation vehicle = 1;
+		PedestrianInformation pedestrian = 2;
+		SimulatorHandshakeMessage handshake = 3;
+	}
+}
+

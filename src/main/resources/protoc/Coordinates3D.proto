@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package protocol;
+
+option java_package = "protocol";
+option java_outer_classname = "Coordinates3D";
+
+// Cartesian coordinates in a 3D space
+message Coordinates3DMessage {
+	double x = 1;
+	double y = 2;
+	double z = 3;
+}

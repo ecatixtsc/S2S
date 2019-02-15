@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package protocol;
+
+//import external protocol classes
+import "Coordinates3D.proto";
+import "AgentProperty.proto";
+
+// java properties
+option java_package = "protocol";
+option java_outer_classname = "Vehicle";
+
+// Vehicle information class
+message VehicleInformation {
+
+// publisher id
+	string publisherId = 2;
+
+//simulation timestamp
+	int64 simTimeStamp = 7;
+
+	// vehicle state
+	protocol.AgentPropertyEnum vehicleState = 1;
+
+	// internal vehicle id
+	string internalVehicleId = 3;
+
+	// coordinates
+	protocol.Coordinates3DMessage vehicleCoordinates = 4;
+
+	// heading
+	protocol.Coordinates3DMessage vehicleHeading = 5;
+
+	//speed
+	double vehicleSpeed = 6;
+}
+

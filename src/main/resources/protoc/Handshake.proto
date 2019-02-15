@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package protocol;
+
+// java settings
+option java_package = "protocol";
+option java_outer_classname = "SimulatorHandshake";
+
+// Handshake message: the simulator sends vital information to Lassie Lite
+message SimulatorHandshakeMessage {
+
+// publisher id or simulator id
+	string publisherId = 1;
+
+	//simulation timestamp
+	int64 simTimeStamp = 3;
+
+	// tick length in milliseconds
+	int64 tickLength = 2;
+}
