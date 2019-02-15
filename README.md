@@ -5,7 +5,9 @@ Simulation to Simulation
 
 S2S is a piece of light-weight software infrastructure that acts as a harness & controller for integrating simulators and simulations.
 S2S is designed to act as a connection broker between simulations and to manage their operation and interaction. It does not itself interact directly with the contents of streams of information produced or consumed by simulations.
+
 Technical features of the harness are:
+
 •	Exchange of objects using TCP/IP over streams
 •	Google Protocol Buffers (GBP) as a language neutral mechanism for simulation event streams
 •	GBP for harness/simulation control (by default, a single control bus)
@@ -14,9 +16,12 @@ Technical features of the harness are:
 •	Avoids central bottleneck
 •	Customisation and extensibility achieved through simulator stubs not by extensions to S2S itself
 •	S2S is written in Java
-•	Use of Apache Kafka streams (by default) for both harness control and event streams
+•	Use of socket streams (by default) for both harness control and event streams
+
 Mediating and translating the output from and input to simulations can be added by configuring new GBP structures. In this way, integrating features for inter-simulation communication is achieved by a mix of defining GBP structures and writing bespoke code in the form of simulation stubs that produce and consume streams from other simulations in the harness cluster.
+
 All the management and communication data structures that are shared by stubs are defined in GBP form at a handshake level. This makes negotiation, versioning both efficient, facilitates upgrades and extensibility.
+
 S2S will support:
 -	Event filtering and prioritisation - to optimise the bandwidth used by the data streams and the order in which events are placed on streams
 -	Mechanisms to support both synchronous and asynchronous simulation
